@@ -1,5 +1,5 @@
-view: states {
-  sql_table_name: `geospatial_data.states`
+view: states_test {
+  sql_table_name: `david-c-sandbox-dev.geospatial_data.states_test`
     ;;
   drill_fields: [id]
 
@@ -7,11 +7,6 @@ view: states {
     primary_key: yes
     type: number
     sql: ${TABLE}.id ;;
-  }
-
-  dimension: merge_key {
-    type: string
-    sql: 'JOIN' ;;
   }
 
   dimension: country_code {
@@ -44,6 +39,11 @@ view: states {
     sql: ${TABLE}.name ;;
   }
 
+  dimension: same_string {
+    type: string
+    sql: ${TABLE}.same_string ;;
+  }
+
   dimension: state_code {
     type: string
     sql: ${TABLE}.state_code ;;
@@ -54,13 +54,8 @@ view: states {
     sql: ${TABLE}.type ;;
   }
 
-  measure: total_id {
-    type: sum
-    sql: ${country_id} ;;
-  }
-
   measure: count {
     type: count
-    drill_fields: [id, name, country_name, cities.count]
+    drill_fields: [id, name, country_name]
   }
 }
