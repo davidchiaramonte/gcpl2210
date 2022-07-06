@@ -21,3 +21,5 @@ explore: cities {
     relationship: many_to_one
   }
 }
+
+explore: states_test {}

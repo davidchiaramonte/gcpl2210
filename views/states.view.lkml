@@ -9,6 +9,11 @@ view: states {
     sql: ${TABLE}.id ;;
   }
 
+  dimension: current_timestamp {
+    type: date_time
+    sql: CURRENT_TIMESTAMP ;;
+  }
+
   dimension: merge_key {
     type: string
     sql: 'JOIN' ;;

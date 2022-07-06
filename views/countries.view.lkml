@@ -3,6 +3,14 @@ view: countries {
     ;;
   drill_fields: [id]
 
+  parameter: parameter_1 {
+    type: unquoted
+    allowed_value: {
+      label: "Some Label Here"
+      value: "but_value_shows_up_in_downloads"
+    }
+  }
+
   dimension: id {
     primary_key: yes
     type: number

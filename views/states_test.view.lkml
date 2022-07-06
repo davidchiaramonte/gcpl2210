@@ -54,6 +54,16 @@ view: states_test {
     sql: ${TABLE}.type ;;
   }
 
+  dimension: join_key {
+    type: string
+    sql: 'JOIN' ;;
+  }
+
+  measure: total_id {
+    type: sum
+    sql: ${country_id} ;;
+  }
+
   measure: count {
     type: count
     drill_fields: [id, name, country_name]
