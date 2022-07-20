@@ -3,6 +3,30 @@ view: cities {
     ;;
   drill_fields: [id]
 
+  parameter: dashboard_selection_test {
+    type: unquoted
+    allowed_value: {
+      label: "Today"
+      value: "today"
+    }
+    allowed_value: {
+      label: "This week"
+      value: "this_week"
+    }
+    allowed_value: {
+      label: "This month"
+      value: "this_month"
+    }
+    allowed_value: {
+      label: "This quarter"
+      value: "this_quarter"
+    }
+    allowed_value: {
+      label: "This year"
+      value: "this_year"
+    }
+  }
+
   dimension: id {
     primary_key: yes
     type: number
